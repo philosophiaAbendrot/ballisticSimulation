@@ -1,4 +1,3 @@
-<script>
     $(document).ready(function(){
       var index = 0;
       var xVel = 10;
@@ -41,5 +40,3 @@
         $('.sprite').css({'left': x, 'bottom':y});
       }
     });
-
-  </script>
