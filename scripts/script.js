@@ -11,26 +11,25 @@
       var frameInterval = 0.033;
       var frameIntervalM = frameInterval * 1000;
       var pixelRatio = 0.2; //1px = 0.2m
+      var start = 0;
 
-      setInterval(onTimerTick,frameIntervalM); //33 milliseconds = ~ 30 frames per second
+      $('button#startCommand').on('click', startFunction);
 
-      $('button#startCommand').on('click',function(){
-        //have to make the simulation start when the start button is pressed.
-      });
+      function startFunction(){
+        setInterval(main,frameIntervalM);
+      }
+       //33 milliseconds = ~ 30 frames per second
 
-      function onTimerTick(){
+      function main(){
         if (bottom <= 0 && yVel < 0){
           return;
         }
 
         updatePanel();
         calculatePhysics();
-
-
-        bottom = Math.round(yPos / pixelRatio);
-        left = Math.round(xPos / pixelRatio);
         redraw(left,bottom);
       }
+
 
       function updatePanel(){
         $('li:nth-child(1)').text("Frame Number: " + index);
@@ -50,6 +49,8 @@
       }
 
       function redraw(x,y){
+        bottom = Math.round(yPos / pixelRatio);
+        left = Math.round(xPos / pixelRatio);
         $('.sprite').css({'left': x, 'bottom':y});
       }
     });
