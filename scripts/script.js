@@ -19,12 +19,7 @@
           return;
         }
         index += 1;
-        $('li:nth-child(1)').text("Frame Number: " + index);
-        $('li:nth-child(2)').text("T: : " + (index*frameInterval).toPrecision(3) + " s");
-        $('li:nth-child(3)').text("Height: " + yPos.toPrecision(3) + " m");
-        $('li:nth-child(4)').text("Down Range Distance: " + xPos.toPrecision(3) + " m");
-        $('li:nth-child(5)').text("Horizontal Velocity: " + xVel.toPrecision(3) + " m/s");
-        $('li:nth-child(6)').text("Vertical Velocity: " + yVel.toPrecision(3) + " m/s");
+        updateTelemetry(xPos,yPos,xVel,yVel,index,frameInterval);
 
         xPos += xVel * frameInterval;
         yPos += yVel * frameInterval;
@@ -39,4 +34,14 @@
       function redraw(x,y){
         $('.sprite').css({'left': x, 'bottom':y});
       }
+
+      function updateTelemetry(xPos,yPos,xVel,yVel,index,frameInterval){
+        $('li:nth-child(1)').text("Frame Number: " + index);
+        $('li:nth-child(2)').text("T: : " + (index*frameInterval).toPrecision(3) + " s");
+        $('li:nth-child(3)').text("Height: " + yPos.toPrecision(3) + " m");
+        $('li:nth-child(4)').text("Down Range Distance: " + xPos.toPrecision(3) + " m");
+        $('li:nth-child(5)').text("Horizontal Velocity: " + xVel.toPrecision(3) + " m/s");
+        $('li:nth-child(6)').text("Vertical Velocity: " + yVel.toPrecision(3) + " m/s");
+      }
+
     });
