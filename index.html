@@ -3,49 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Physics Demo</title>
-  <style>
-    h1{
-      margin: 10px auto;
-      text-align: center;
-    }
+  <link rel="stylesheet" href="styles/style.css">
 
-    .drawArea{
-      width: 500px;
-      height: 500px;
-      margin: 0px auto;
-      border: 1px solid black;
-      position: relative;
-    }
-
-    .sprite{
-      width: 5px;
-      height: 5px;
-      background-color: black;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    li{
-      padding-left: 0;
-      list-style-type: none;
-    }
-  </style>
 </head>
 <body>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <h1>Physics Demo</h1>
-  <div class="drawArea">
-    <div class="sprite"></div>
+  <div class="wrapper">
+    <h1>Physics Demo</h1>
+    <div class="panel clearfix">
+      <section class="inputPanel">
+        <h3>Inputs</h3>
+        <div class="inputRow clearfix">
+          <label for="velocityInput">Input Velocity</label>
+          <input type="text" id="velocityInput">
+        </div>
+
+        <div class="inputRow clearfix">
+          <label for="initialPosition">Initial Position</label>
+          <input type="text" name="initialPosition">
+        </div>
+      </section>
+
+      <section class="dataPanel">
+        <h3>Telemetry</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+    </div>
+
+
+    <section class="drawPanel">
+      <div class="drawArea">
+        <div class="sprite"></div>
+      </div>
+    </section>
   </div>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="scripts/script.js"></script>
   <script>
     $(document).ready(function(){
       var index = 0;
