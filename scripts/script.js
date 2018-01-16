@@ -8,17 +8,22 @@
       var xAcc = 0;
       var bottom;
       var left;
-      var frameInterval = 0.033;
+      var frameInterval = 0.033; //30 fps
       var frameIntervalM = frameInterval * 1000;
       var pixelRatio = 0.2; //1px = 0.2m
       var start = 0;
+      var myVar;
 
       $('button#startCommand').on('click', startFunction);
+      $('button#stopCommand').on('click', stopFunction);
 
       function startFunction(){
-        setInterval(main,frameIntervalM);
+        myVar = setInterval(main,frameIntervalM);
       }
-       //33 milliseconds = ~ 30 frames per second
+
+      function stopFunction(){
+        clearInterval(myVar);
+      }
 
       function main(){
         if (bottom <= 0 && yVel < 0){
