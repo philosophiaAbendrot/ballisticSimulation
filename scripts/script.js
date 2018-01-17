@@ -11,10 +11,18 @@
       var xPos = 0;
       var yPos = 0;
 
+
+      //initialize telemetry panel
+      updatePanel(frameInterval,xPos,yPos,xVel,yVel);
       $('button#startCommand').on('click', startFunction);
       $('button#stopCommand').on('click', stopFunction);
 
+
       function startFunction(){
+        xVel = Number($('input#velocityInput').val().split(',')[0]);
+        yVel = Number($('input#velocityInput').val().split(',')[1]);
+        xPos = Number($('input#initialPositionInput').val().split(',')[0]);
+        yPos = Number($('input#initialPositionInput').val().split(',')[1]);
         myVar = setInterval(main,frameIntervalM);
       }
 
