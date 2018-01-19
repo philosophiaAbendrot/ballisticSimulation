@@ -1,7 +1,4 @@
     $(document).ready(function(){
-      var physicsObject = {
-
-      };
 
       var frameInterval = 0.033; //30 fps
       var frameIntervalM = frameInterval * 1000;
