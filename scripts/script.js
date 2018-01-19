@@ -1,5 +1,7 @@
-//temporarily remove trailing dots functionality.
     $(document).ready(function(){
+      var physicsObject = {
+
+      };
 
       var frameInterval = 0.033; //30 fps
       var frameIntervalM = frameInterval * 1000;
@@ -74,19 +76,6 @@
         if (yPos < 0 && yVel < 0){
           return;
         }
-<<<<<<< HEAD
-        index += 1;
-        updateTelemetry(xPos,yPos,xVel,yVel,index,frameInterval);
-
-        xPos += xVel * frameInterval;
-        yPos += yVel * frameInterval;
-        yVel += yAcc * frameInterval;
-        xVel += xAcc * frameInterval;
-
-        bottom = Math.round(yPos / pixelRatio);
-        left = Math.round(xPos / pixelRatio);
-        redraw(left,bottom);
-=======
 
         if (height < 0){
           return;
@@ -109,7 +98,6 @@
         $('li:nth-child(8)').text("Horizontal Acceleration: " + xAcc.toPrecision(3) + " m/s2");
         $('li:nth-child(9)').text("yPosition: " + yPos.toPrecision(3) + " m");
         $('li:nth-child(10)').text("xPosition: " + xPos.toPrecision(3) + " m");
->>>>>>> physicsUpgrade
       }
 
       function redraw(x,y){
