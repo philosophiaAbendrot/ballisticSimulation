@@ -6,8 +6,8 @@
   <!--Import Roboto font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
-
 </head>
+
 <body>
   <div class="wrapper">
     <h1>Physics Demo</h1>
@@ -20,14 +20,21 @@
         </div>
 
         <div class="inputRow clearfix">
-          <label for="initialPosition">Initial Position</label>
-          <input type="text" name="initialPosition">
+          <label for="initialPositionInput">Initial Position</label>
+          <input type="text" id="initialPositionInput">
         </div>
+
+        <button id="startCommand">Start Simulation</button>
+        <button id="stopCommand">Stop Simulation</button>
       </section>
 
       <section class="dataPanel">
         <h3>Telemetry</h3>
         <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
           <li></li>
           <li></li>
           <li></li>
@@ -41,7 +48,8 @@
 
     <section class="drawPanel">
       <div class="drawArea">
-        <div class="sprite"></div>
+        <div class="earth"></div>
+        <div class="spacecraftSprite"></div>
       </div>
     </section>
   </div>
