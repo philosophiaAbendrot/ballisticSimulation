@@ -1,9 +1,4 @@
-//Next Steps:
-//draw the planet earth.
-//draw a red trail.
-//added absolute velocity on parameter panel
-//added a height value on parameter panel
-//if height is negative, terminate function.
+//temporarily remove trailing dots functionality.
     $(document).ready(function(){
 
       var frameInterval = 0.033; //30 fps
@@ -27,14 +22,13 @@
       var yPos = radius;
       var xAcc = 0;
       var yAcc = 0;
-      var lastXpx = 0;
-      var lastYpx = 0;
       var height = centerDist - radius;
       var bottom;
       var left;
       var windowWidth = $('.drawArea').width();
       var windowHeight = $('.drawArea').height();
 
+      //positions the earth to be drawn on the drawArea
       var earthBottom = Math.round(windowHeight / 2) - radiusPx;
       var earthLeft = Math.round(windowWidth / 2) - radiusPx;
       //initialize telemetry panel
@@ -107,15 +101,5 @@
       function redraw(x,y){
         //redraw spacecraft sprite
         $('.drawArea .spacecraftSprite').css({'left': x, 'bottom':y});
-        //if the position of the spacecraft sprite has changed
-        var trailSprite = '<div class="trailSprite"></div>';
-        if (lastXpx !== x || lastYpx !== y){
-          //create new sprite
-          $('.drawArea').prepend(trailSprite);
-        }
-
-        //update the spacecraft position
-        lastXpx = x;
-        lastYpx = y;
       }
     });
